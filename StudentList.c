@@ -45,13 +45,8 @@ void printStudentNode(StudentNode* const NODE)
     if(NODE ==NULL)
         return;
     StudentNode * node = NODE;
-    printf("%d\n", node->st->id);
-    if(node->st->grade1!= -1){
-        printf("%d\n" , node->st->grade1);
-    }
-    if(node->st->grade2!= -1){
-        printf("%d\n", node->st->grade2);
-    }
+
+        printf("%d %d %d\n", node->st->id , node->st->grade1 , node->st->grade2 );
 
 }
 

@@ -35,57 +35,86 @@ int NumberOfStudentsFirstEx(StudentList *List)
 
     int counter = 0;
     StudentNode  * template = List->head;
-    if(template->st->grade1 != -1 && template->st->grade2 ==-1)
+    if(List->head == NULL)
+    {
+        return 0;
+    }
+        while (template!=NULL)
+        {
+    if(template->st->grade1 == -1)
     {
         counter++;
-        template= template->next;
     }
+        template = template->next;
+
+         }
     return counter;
 }
 int NumberOfStudentsSecondEx(StudentList *List)
 {
-    int counter =0;
+    int counter = 0;
     StudentNode  * template = List->head;
-    if(template->st->grade1 == -1 && template->st->grade2 !=-1)
+    if(List->head == NULL)
     {
-    counter++;
-    template= template->next;
+        return 0;
     }
-return counter;
-
-}
+    while (template!=NULL) {
+        if ( template->st->grade2 == -1)
+        {
+            counter++;
+        }
+            template = template->next;
+    }
+    return counter;
+    }
 int NumberOfStudentsNoEx(StudentList * List)
 {
     int counter =0;
     StudentNode  * template = List->head;
-    if(template->st->grade1 == -1 && template->st->grade2 ==-1)
+    if(template==NULL)
     {
-        counter++;
-        template= template->next;
+        return 0;
+    }
+    while(template!=NULL) {
+        if (template->st->grade1 == -1 && template->st->grade2 == -1) {
+            counter++;
+        }
+        template = template->next;
     }
     return counter;
 }
-int CheckIfPassInA(StudentList * List)
+double CheckIfPassInA(StudentList * List)
 {
-    int counter =0;
+    double counter =0;
     StudentNode  * template = List->head;
-    if(template->st->grade1 <60)
-    {
-        counter++;
-        template= template->next;
+    if(template==NULL) {
+        return 0;
     }
-    return counter;
+    while(template!=NULL)
+    {
+
+        if (template->st->grade1 < 60 ) {
+            counter++;
+        }
+        template = template->next;
+    }
+
+    return (double)(counter/NumberOfStudents(List))*100;
 }
-int CheckIfPassInB(StudentList * List)
+double CheckIfPassInB(StudentList * List)
 {
     int counter =0;
     StudentNode  * template = List->head;
-    if(template->st->grade2 <60)
-    {
-        counter++;
-        template= template->next;
+    if(template==NULL) {
+        return 0;
     }
-    return counter;
+    while(template!=NULL) {
+        if (template->st->grade2 < 60) {
+            counter++;
+        }
+        template = template->next;
+    }
+    return (counter/ NumberOfStudents(List))*100;
 }
 int CalculateAverageInA(StudentList * List)
 {

@@ -5,10 +5,10 @@
 void newFile();
 int NumberOfStudents(StudentList *List);
 int NumberOfStudentsFirstEx(StudentList *List);
-int NumberOfStudentsSecondeEx(StudentList *List);
+int NumberOfStudentsSecondEx(StudentList *List);
 int NumberOfStudentsNoEx(StudentList * List);
-int CheckIfPassInA(StudentList * List);
-int CheckIfPassInB(StudentList * List);
+double CheckIfPassInA(StudentList * List);
+double CheckIfPassInB(StudentList * List);
 int CalculateAverageInA(StudentList * List);
 
 #endif //EX4_GRADESOPERATIONS_H
